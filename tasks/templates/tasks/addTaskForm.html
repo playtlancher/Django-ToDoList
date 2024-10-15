@@ -1,0 +1,18 @@
+{% extends 'tasks/layout.html' %}
+{% block title %}
+task.name
+{% endblock %}
+{% block content %}
+<div class="page-container mt-5">
+    <div class="container page-center">
+        <form action="/add-task/" class="form" method="POST">
+            {% csrf_token %}
+            <h2 class="jus-con-cen">Add task form</h2>
+            {{ form.name }}
+            {{ form.description }}
+            <span>{{ message }}</span>
+            <button type="submit">Add task</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
