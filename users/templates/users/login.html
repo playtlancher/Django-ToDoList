@@ -1,5 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -20,22 +21,19 @@
             <h1>Welcome</h1>
             {% csrf_token %}
 
-<!--{#            <input placeholder="Username">#}-->
-                    {{ form.username }}
-<!--{#            <input type="password" placeholder="Password">#}-->
-                    {{ form.password }}
+            {{ form.username }}
+            {{ form.password }}
             <button>Log in</button>
             <span class="error">{{ error }}</span>
             <span class="switcher">Don’t have an account? <a href="/registration">Sign Up</a></span>
 
         </form>
     </div>
-    <footer>
-        <p>&copy; 2024 TravelMap by <a href="https://github.com/playtlancher">playtlancher</a></p>
-    </footer>
+
 </div>
 </body>
+<footer>
+    <p>&copy; 2024 TravelMap by <a href="https://github.com/playtlancher">playtlancher</a></p>
+</footer>
 </html>
 
-</body>
-</html>

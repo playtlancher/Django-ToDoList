@@ -6,14 +6,18 @@ Task List
 <h2 class="jus-con-cen">Task List</h2>
 
 <div class="tasks-container">
-    {% for i in tasks %}
-    <a href="/task/{{i.id}}">
-        <div class="task-card">
-            <h3 class="task-title">{{ i.name }}</h3>
-            <p class="task-desc">{{ i.description }}</p>
-            <span class="task-status">Status: {{ i.status }}</span>
-        </div>
-    </a>
-    {% endfor %}
+    {% if tasks %}
+        {% for i in tasks %}
+        <a href="/task/{{i.id}}">
+            <div class="task-card">
+                <h3 class="task-title">{{ i.name }}</h3>
+                <p class="task-desc">{{ i.description }}</p>
+                <span class="task-status">Status: {{ i.status }}</span>
+            </div>
+        </a>
+        {% endfor %}
+    {% else %}
+    <p class="empty-message"><em>There are no tasks, you can relax</em></p>
+    {% endif %}
 </div>
 {% endblock %}
